@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import LoadingComponent from "./components/LoadingComponent";
 import { Link } from "react-router";
 import { useGetAllProductsQuery } from "./services/productApi";
+import SEO from "./components/SEO";
 
 const ProductComponent = lazy(
   () => import("./components/products/ProductComponent"),
@@ -20,6 +21,12 @@ function App() {
 
   return (
     <div>
+      <SEO
+        title="Explore Products | React Foundation Store"
+        description="Browse our premium selection of tech products, accessories, and digital items with fast shipping and live updates."
+        image="/og-image.jpg"
+        type="website"
+      />
       <section className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 gap-4 min-h-[400px]">
         {showLoading ? (
           <div className="col-span-full flex justify-center items-center py-20">
