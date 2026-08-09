@@ -6,7 +6,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: import.meta.env.VITE_BASE_ISHOP_URL,
   // headers
   prepareHeaders: (header, { getState }) => {
-    const accessToken =  getState().auth.accessToken;
+    const accessToken = getState()?.auth?.accessToken;
     if (accessToken) {
       header.set("Authorization", `Bearer ${accessToken}`);
     }

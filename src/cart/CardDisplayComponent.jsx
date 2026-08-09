@@ -4,9 +4,9 @@ import { useAppDispatch, useAppSelector } from "../redux/hook";
 
 export default function zCartDisplayComponent() {
   const dispatch = useAppDispatch();
-  const totalPrice = useAppSelector((state) => state.cart.totalPrice);
+  const totalPrice = useAppSelector((state) => state?.cart?.totalPrice || 0);
   console.log(`==> Total Price: ${totalPrice}`);
-  const products = useAppSelector((state) => state.cart.products);
+  const products = useAppSelector((state) => state?.cart?.products || []);
   return (
     <section className=" w-full h-[700px] relative bg-white  ">
       <div className="bg-white flex flex-col h-full absolute right-0 p-10 w-[450px]">

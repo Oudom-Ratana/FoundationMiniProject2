@@ -28,10 +28,10 @@ export default function NavbarComponent() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const user = useAppSelector((state) => state.auth.user);
-  const accessToken = useAppSelector((state) => state.auth.accessToken);
-  const cartProducts = useAppSelector((state) => state.cart.products);
-  const count = useAppSelector((state) => state.counter.count);
+  const user = useAppSelector((state) => state?.auth?.user);
+  const accessToken = useAppSelector((state) => state?.auth?.accessToken);
+  const cartProducts = useAppSelector((state) => state?.cart?.products || []);
+  const count = useAppSelector((state) => state?.counter?.count || 0);
 
   const isLogined = Boolean(accessToken || user);
 

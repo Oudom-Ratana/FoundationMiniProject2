@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
-import cartReducer from "../features/cart/cartSlice";
-import authReducer from "../features/auth/authSlice";
+import counterSlice from "../features/counter/counterSlice";
+import cartSlice from "../features/cart/cartSlice";
+import authSlice from "../features/auth/authSlice";
 import { baseApi } from "../services/baseApi";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter: counterReducer,
-      cart: cartReducer,
-      auth: authReducer,
+      counter: counterSlice,
+      cart: cartSlice,
+      auth: authSlice,
       [baseApi.reducerPath]: baseApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
