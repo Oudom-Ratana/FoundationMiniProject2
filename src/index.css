@@ -1,0 +1,4 @@
+@import "tailwindcss";
+
+/* import style hero ui after install heroui*/
+@import "@heroui/styles"; 
